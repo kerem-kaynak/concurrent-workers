@@ -1,0 +1,31 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("POSTGRES_PRISMA_URL")
+  directUrl = env("POSTGRES_URL_NON_POOLING")
+}
+
+model Worker {
+  id          Int         @id @default(autoincrement())
+  status      String      @default("pending")
+  concurrency Int
+  createdAt   DateTime    @default(now())
+  updatedAt   DateTime    @updatedAt
+
+  tasks     Task[]
+}
+
+model Task {
+  id        Int         @id @default(autoincrement())
+  name      String
+  status    String      @default("pending")
+  timeCost  Int
+  createdAt DateTime    @default(now())
+  updatedAt DateTime    @updatedAt
+
+  workerId   Int
+  worker     Worker       @relation(fields: [workerId], references: [id], onDelete: Cascade)
+}
