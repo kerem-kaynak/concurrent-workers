@@ -4,7 +4,13 @@ This is an example client-worker project where the client can create workers wit
 
 ## Tech Stack
 
-The project is a monolithic Next.js application, React frontend, tRPC backend, Prisma ORM, PostgreSQL database, deployed on Vercel.
+The project is a monolithic Next.js application:
+
+- React frontend
+- tRPC backend
+- Prisma ORM
+- PostgreSQL database
+- Deployed on Vercel
 
 ## Local Development
 
