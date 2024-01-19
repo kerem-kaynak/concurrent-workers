@@ -33,6 +33,6 @@ Reset & seed the database
 npx prisma migrate reset
 ```
 
-## Live Demo
+## Live Demo (currently down)
 
 There's a live demo of the project [here](https://concurrent-workers.vercel.app). Note that the project has no authentication / user sessions, therefore your changes are visible to all other viewers of the project :)
